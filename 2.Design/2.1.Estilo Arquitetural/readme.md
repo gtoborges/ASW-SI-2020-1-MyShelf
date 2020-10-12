@@ -1,4 +1,4 @@
-# Visão da arquitetura
+# Estilo arquitetural
 
 ## Nome do projeto:
   - MyShelf
@@ -12,7 +12,7 @@
 | React     | Node.js  |PostgreSQL|
 -----------------------------------
 
-![API Rest Diagram](API_rest_diagram.png)
+![API Rest Diagram](../API_rest_diagram.png)
   
 #### React (components, routes, services, styles, etc)
 Definição da estrutura de pastas e arquivos
