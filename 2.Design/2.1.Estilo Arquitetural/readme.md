@@ -14,10 +14,15 @@
 
 ![API Rest Diagram](../API_rest_diagram.png)
   
+### Front-End
+
 #### React (components, routes, services, styles, etc)
 Definição da estrutura de pastas e arquivos
  - a definir
- 
+
+
+### Back-end
+
 #### NodeJS
  Citando aqui apenas as principais bibliotecas que já sabemos que iremos utilizar
  - Express.js para a abstração da camada http, requests e responses
