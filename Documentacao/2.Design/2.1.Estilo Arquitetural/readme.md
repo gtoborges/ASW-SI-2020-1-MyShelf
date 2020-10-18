@@ -21,16 +21,38 @@
  - Axios para conexão ao backend e para realizar requisições à api
  - Estilização de componentes com a biblioteca styled-components
 
-Definição da estrutura de pastas e arquivos
- - a definir
+Esboço inicial da estrutura de pastas e arquivos (entrypoint, components, router, etc)
+```bash
+front-end
+├── dir1
+│   └── file1
+└── dir2
+    └── file2
+```
 
 ### Back-end
 
 #### NodeJS
- Citando aqui apenas as principais bibliotecas que já sabemos que iremos utilizar
+Citando aqui apenas as principais bibliotecas que já sabemos que iremos utilizar
  - Express.js para a abstração da camada http, requests e responses
  - Cors.js para habilitar a comunicação cross-origin (liberar acesso para o front-end)
  - Sequelize (ORM) para abstrair e facilitar a comunicação com o banco de dados
  
- Definição da estrutura de pastas e arquivos (main file, routes, services, etc)
- - a definir
+Esboço inicial da estrutura de pastas e arquivos (entrypoint, routes, services, etc)
+```bash
+/backend-end
+├── /src
+│   └── /app
+|   |   └── /services
+|   |   └── /middlewares
+|   └── /config
+|   └── /database
+|   |   └── /migrations
+|   |   └── /models
+|   └── routes.js
+|   └── app.js
+|   └── server.js <= entry point
+└── package.json
+
+```
+ 
