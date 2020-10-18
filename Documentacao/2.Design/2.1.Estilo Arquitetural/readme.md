@@ -17,11 +17,12 @@
 ### Front-End
 
 #### React (components, routes, services, styles, etc)
-Definição da estrutura de pastas e arquivos
  - React Router Dom para fazer a navegação entre as páginas da aplicação
  - Axios para conexão ao backend e para realizar requisições à api
  - Estilização de componentes com a biblioteca styled-components
 
+Definição da estrutura de pastas e arquivos
+ - a definir
 
 ### Back-end
 
