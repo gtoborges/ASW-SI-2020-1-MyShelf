@@ -17,3 +17,11 @@ Aqui é representado um fluxo geral do sistema. Como o sistema de trata de um re
 ## Visão de Cenários
 
 ![Casos de uso](./use_case_diagram.png)
+
+ - O usuário cria  um cadastro no sistema.
+ - O usuário efetua login no sistema.
+ - O usuário pode alterar suas credenciais no sistema.
+ - O usuário navega pela listagem de livros (caso já existam livros cadastrados).
+ - O usuário cadastra um livro podendo informar o titulo, adicionar imagem, e descrição.
+ - Ao selecionar um livro cadastrado o usuário pode adicionar um arquivo kindle associado a esse livro.
+ 
