@@ -1,4 +1,4 @@
-# Estilo arquitetural
+# Visão arquitetural
 
 ## Visão Física
 
