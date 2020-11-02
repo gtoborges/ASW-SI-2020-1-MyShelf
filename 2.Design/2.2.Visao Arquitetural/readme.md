@@ -23,5 +23,6 @@ Aqui é representado um fluxo geral do sistema. Como o sistema de trata de um re
  - O usuário pode alterar suas credenciais no sistema.
  - O usuário navega pela listagem de livros (caso já existam livros cadastrados).
  - O usuário cadastra um livro podendo informar o titulo, adicionar imagem, e descrição.
- - Ao selecionar um livro cadastrado o usuário pode adicionar um arquivo kindle associado a esse livro.
+ - Ao selecionar um livro cadastrado o usuário pode adicionar um arquivo kindle via upload de arquivos associado a esse livro.
+ - O usuário pode excluir um arquivo kindle associado ao livro cadastrado
  
