@@ -10,7 +10,7 @@ A api por sua vez, responde requisições http que tem a origem no front-end, e 
 
 ## Visão do Processo
 
-![Visao do processo](../VisaoDeProcesso.png)
+![Visao do processo](./VisaoDeProcesso.png)
 
 Aqui é representado um fluxo geral do sistema. Como o sistema de trata de um registro de livros para um usuário, o fluxo inicia pela autenticação, logo após a validação o usuário é direcionado para a sua listagem pessoal de livros, onde ele pode acessar os já cadastrados, editando ou excluido, ou pode cadastrar um novo livro. Ao fim do acesso, ele pode se deslogar do sistema.
 
