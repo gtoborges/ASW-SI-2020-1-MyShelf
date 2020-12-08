@@ -1,0 +1,461 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "MyShelf. Trabalho de Arquitetura de Software.",
+    "version": "",
+    "title": "Myshelf API",
+    "contact": {
+      "name": "Gabriel Rodrigues da Silva Pires  e Augusto Araújo Borges "
+    }
+  },
+  "produces": [
+    "application/json"
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/users": {
+      "post": {
+        "tags": [
+          "Register"
+        ],
+        "summary": "Register a new user",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "User",
+            "description": "User Create Object",
+            "schema": {
+              "$ref": "#/definitions/UserRegisterRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "User Created",
+            "schema": {
+              "$ref": "#/definitions/UserRegisterResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized."
+          },
+          "400": {
+            "description": "Validation Fails."
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Register"
+        ],
+        "summary": "Update a user",
+        "parameters": [
+          {
+            "in": "body",
+            "description": "User Credentials Object",
+            "name": "User",
+            "schema": {
+              "$ref": "#/definitions/UserUpdateRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "User Updated",
+            "schema": {
+              "$ref": "#/definitions/UserUpdateResponse"
+            }
+          },
+          "401": {
+            "description": "Password does not match"
+          },
+          "400": {
+            "description": "User already exists"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/sessions": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Authentication",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "User Authentication",
+            "description": "User Authentication Object",
+            "schema": {
+              "$ref": "#/definitions/UserSessionRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Session Created",
+            "schema": {
+              "$ref": "#/definitions/UserSessionResponse"
+            }
+          },
+          "401": {
+            "description": "Password does not match"
+          },
+          "400": {
+            "description": "Validation fails"
+          }
+        }
+      }
+    },
+    "/books": {
+      "post": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Cria novo registro de livro",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Book",
+            "description": "Criar novo registro de livro",
+            "schema": {
+              "$ref": "#/definitions/BookCreateRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Livro Adicionado",
+            "schema": {
+              "$ref": "#/definitions/BookCreateResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized."
+          },
+          "400": {
+            "description": "Validation fails"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Listar Todos Livros",
+        "responses": {
+          "200": {
+            "description": "Todos Livros Cadastrados",
+            "schema": {
+              "$ref": "#/definitions/BookGetResponse"
+            }
+          },
+          "401": {
+            "description": "Token Invalid."
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/books/{id}": {
+      "parameters": [
+        {
+          "name": "Livro por Id",
+          "in": "path",
+          "description": "Retorna um determinado livro por id",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Get book with given tag",
+        "responses": {
+          "200": {
+            "description": "Livro retornado pelo id",
+            "schema": {
+              "$ref": "#/definitions/BookGetResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized."
+          }
+
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/book/{id}": {
+      "put": {
+        "summary": "Atualiza livro pelo id",
+        "tags": [
+          "Books"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "Id from book to update",
+            "schema": {
+              "$ref": ""
+            }
+          },
+          {
+            "in": "body",
+            "name": "Book",
+            "schema": {
+              "$ref": "#/definitions/BookCreateRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Book Updated",
+            "schema": {
+              "$ref": "#/definitions/BookCreateResponse"
+            }
+          },
+          "400": {
+            "description": "Validation fails"
+          },
+          "401": {
+            "description": "Unauthorized."
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Deleta livro pelo id",
+        "tags": [
+          "Books"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "Delete Book given id"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "book removed from database"
+          },
+          "401": {
+            "description": "Token Invalid."
+          },
+          "400": {
+            "description": "failed to remove book"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "JWT": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "UserRegisterRequest": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "UserRegisterResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        }
+      }
+    },
+    "UserUpdateRequest": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "oldPassword": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "confirmPassword": {
+          "type": "string"
+        }
+      }
+    },
+    "UserUpdateResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        }
+      }
+    },
+    "UserSessionRequest": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "UserSessionResponse": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        }
+      }
+    },
+    "BookCreateRequest": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "BookCreateResponse": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        }
+      }
+    },
+    "BookGetResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "BookGetByTagRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

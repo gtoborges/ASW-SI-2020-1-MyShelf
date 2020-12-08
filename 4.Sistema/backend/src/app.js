@@ -8,12 +8,16 @@ import cors from 'cors';
 import helmet from 'helmet';
 // import RateLimit from 'express-rate-limit';
 // import RateLimitRedis from 'rate-limit-redis';
+import swaggerUi from 'swagger-ui-express';
+import swaggerDocument from '../src/swagger.json';
+
 
 import './database';
 
 class App {
   constructor(){
     this.server = express();
+    this.server.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
     this.middlewares();
     this.routes();
   }
