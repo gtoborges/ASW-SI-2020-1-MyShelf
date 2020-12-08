@@ -21,10 +21,7 @@ Permitir um desenvolvimento mais produtivo do software.
 podemos utilizar o mesmo gerenciador de pacotes, no caso optamos utilizar o yarn que é mais performático que o npm
 e oferece mais funcionalidades
 
-##### Arquitetura Event-Loop
-
-![Event Loop](./Event_Loop_Diagram.png)
-
+-Arquitetura Event-Loop
 
  - Baseada em eventos(Rotas na maioria das vezes)
  - Call Stack - O node processa através de um loop eterno checando se existem novas funções disparadas pela aplicação que serão executadas em formato de pilha
@@ -74,11 +71,15 @@ carregamentos desnecessários da página, e obtendo mais perfomance e usabilidad
 
 #### Motivação: 
 
-Organização excepcional do código utilizando Componentização, criando um conjunto de HTML, CSS e javascript isolando a lógica de diferentes partes sem que ela interfira no restante do código da aplicação.
+	Organização excepcional do código utilizando Componentização, criando um conjunto de HTML, CSS e javascript isolando a lógica de diferentes partes sem que ela interfira 
+  no restante do código da aplicação.
 
-Divisão de Responsabilidades:
+	Divisão de responsabilidades:
 
-Back-end: Regra de negócio
-Front-end: Interface
+	Back-end: Regra de negócio
+	Front-end: Interface
 
-Possibilidade de aproveitar o conhecimento do framework para desenvolvimento em mobile usando React Native que poderá consumir da mesma api do back-end
+	Possibilidade de aproveitar o conhecimento do framework para desenvolvimento em mobile usando React Native que poderá consumir da mesma api do backend.
+
+	Programação declarativa
+
