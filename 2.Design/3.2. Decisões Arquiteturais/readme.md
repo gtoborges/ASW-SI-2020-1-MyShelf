@@ -74,15 +74,11 @@ carregamentos desnecessários da página, e obtendo mais perfomance e usabilidad
 
 #### Motivação: 
 
-	Organização excepcional do código utilizando Componentização, criando um conjunto de HTML, CSS e javascript isolando a lógica de diferentes partes sem que ela interfira 
-  no restante do código da aplicação.
+Organização excepcional do código utilizando Componentização, criando um conjunto de HTML, CSS e javascript isolando a lógica de diferentes partes sem que ela interfira no restante do código da aplicação.
 
-	Divisão de responsabilidades:
+Divisão de Responsabilidades:
 
-	Back-end: Regra de negócio
-	Front-end: Interface
+Back-end: Regra de negócio
+Front-end: Interface
 
-	Possibilidade de aproveitar o conhecimento do framework para desenvolvimento em mobile usando React Native que poderá consumir da mesma api do backend.
-
-	Programação declarativa
-
+Possibilidade de aproveitar o conhecimento do framework para desenvolvimento em mobile usando React Native que poderá consumir da mesma api do back-end
