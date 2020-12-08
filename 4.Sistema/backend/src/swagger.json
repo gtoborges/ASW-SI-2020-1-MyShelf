@@ -315,7 +315,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Book Uploaded"
+            "description": "Quotes Uploaded"
           },
           "401": {
             "description": "Token Invalid"
