@@ -21,9 +21,10 @@ Permitir um desenvolvimento mais produtivo do software.
 podemos utilizar o mesmo gerenciador de pacotes, no caso optamos utilizar o yarn que é mais performático que o npm
 e oferece mais funcionalidades
 
--Arquitetura Event-Loop
+##### Arquitetura Event-Loop
 
 ![Event Loop](./Event_Loop_Diagram.png)
+
 
  - Baseada em eventos(Rotas na maioria das vezes)
  - Call Stack - O node processa através de um loop eterno checando se existem novas funções disparadas pela aplicação que serão executadas em formato de pilha
