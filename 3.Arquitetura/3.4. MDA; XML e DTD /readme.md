@@ -1,13 +1,8 @@
 ### MDA; XML E DTD
 
-### Documentação Swagger
+Entendemos o DTD como a definição para o que será comunicado (seja o que é recebido em um request, ou enviado em um response). Como nosso projeto é uma API REST, a nossa comunicação se dará através de JSONs, que por sua vez, estão definidos no Swagger da API.
 
-Foi criada a documentação da api utilizando o Swagger, para accessar a página rodar o projeto backend e acessar no browser a partir do endereço: 
-
-http://localhost:3333/swagger
-
-
-![MVC](./Swagger1.png)
+A seguir, ficam os exemplos de algumas rotas com as definições do que se espera do JSON na requisição, e do que será enviado na resposta da requisição.
 
 ### Autenticação
 ![MVC](./Authentication.png)
