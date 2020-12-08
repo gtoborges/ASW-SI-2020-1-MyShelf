@@ -18,10 +18,10 @@ http://localhost:3333/swagger
 ### Cadastro de livro por ID
 ![MVC](./PostBooks.png)
 
-#### Busca de livro por ID
+### Busca de livro por ID
 ![MVC](./GetBookbyId.png)
 
-#### Upload de Arquivos Kindle
+### Upload de Arquivos Kindle
 ![MVC](./QuotesUpload.png)
 
 
