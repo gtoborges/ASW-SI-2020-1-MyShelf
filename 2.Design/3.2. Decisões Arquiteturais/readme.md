@@ -23,7 +23,7 @@ e oferece mais funcionalidades
 
 -Arquitetura Event-Loop
 
-![](./Event_Loop_Diagram.png)
+![Event Loop](./Event_Loop_Diagram.png)
 
  - Baseada em eventos(Rotas na maioria das vezes)
  - Call Stack - O node processa através de um loop eterno checando se existem novas funções disparadas pela aplicação que serão executadas em formato de pilha
@@ -58,7 +58,7 @@ A camada de apresentação irá se comunicar apenas com a lógica de negócio pr
 Motivação: Projetar os elementos internos do sistema de modo que cada um pertença a apenas uma camada lógica ajuda a aumentar a coesão e diminuir o acoplamento. A coesão aumenta, pois cada elemento será desenvolvido com o objetivo de ser parte da apresentação, da lógica ou da persistência do sistema. Dessa maneira, cada elemento terá sua responsabilidade bem definida, mesmo que em alto nível. 
 
 
-![](./mvc.png)
+![MVC](./mvc.png)
 
 ---------------------------------------------------------------------------------------------
 
@@ -73,7 +73,8 @@ carregamentos desnecessários da página, e obtendo mais perfomance e usabilidad
 
 #### Motivação: 
 
-	Organização excepcional do código utilizando Componentização, criando um conjunto de HTML, CSS e javascript isolando a lógica de diferentes partes sem que ela interfira no restante do código da aplicação.
+	Organização excepcional do código utilizando Componentização, criando um conjunto de HTML, CSS e javascript isolando a lógica de diferentes partes sem que ela interfira 
+  no restante do código da aplicação.
 
 	Divisão de responsabilidades:
 
