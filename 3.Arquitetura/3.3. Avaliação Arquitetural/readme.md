@@ -7,7 +7,7 @@ O sistema deve estar operante e acessível 24/7 (ou o máximo próximo disso)
 
 #### Security
 Garantir a integridade dos dados com boas práticas ao guardar informações do usuário
-Utilização do conceito de “transaction” para garantir a integridade dos dados durante operações caso ocorra falhas.
+Utilização do conceito de “transaction” para garantir a integridade dos dados durante operações caso haja múltiplas operações no banco de dados e ocorra falhas.
 
 #### Usability
 Interface amigável/simples
