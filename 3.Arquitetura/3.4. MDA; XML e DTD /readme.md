@@ -2,26 +2,26 @@
 
 ### Documentação Swagger
 
-Foi criada a documentação da api utilizando o Swagger, para accessar  página do swagger basta rodar o projeto backend e acessar no browser a partir do endereço 
+Foi criada a documentação da api utilizando o Swagger, para accessar a página rodar o projeto backend e acessar no browser a partir do endereço: 
 
 http://localhost:3333/swagger
 
 
 ![MVC](./Swagger1.png)
 
-##### Autenticação
+### Autenticação
 ![MVC](./Authentication.png)
 
-##### Atualização de Usuário
+### Atualização de Usuário
 ![MVC](./UpdateUser.png)
 
-##### Cadastro de livro por ID
+### Cadastro de livro por ID
 ![MVC](./PostBooks.png)
 
-##### Busca de livro por ID
+#### Busca de livro por ID
 ![MVC](./GetBookbyId.png)
 
-##### Upload de Arquivos Kindle
+#### Upload de Arquivos Kindle
 ![MVC](./QuotesUpload.png)
 
 
