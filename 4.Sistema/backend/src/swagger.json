@@ -20,7 +20,7 @@
         "tags": [
           "Register"
         ],
-        "summary": "Register a new user",
+        "summary": "Cadastra novo usuário",
         "parameters": [
           {
             "in": "body",
@@ -53,7 +53,7 @@
         "tags": [
           "Register"
         ],
-        "summary": "Update a user",
+        "summary": "Atualiza usuário",
         "parameters": [
           {
             "in": "body",
@@ -69,7 +69,7 @@
         ],
         "responses": {
           "200": {
-            "description": "User Updated",
+            "description": "Usuário atualizado",
             "schema": {
               "$ref": "#/definitions/UserUpdateResponse"
             }
@@ -93,7 +93,7 @@
         "tags": [
           "Authentication"
         ],
-        "summary": "Authentication",
+        "summary": "Autenticação",
         "parameters": [
           {
             "in": "body",
@@ -198,7 +198,7 @@
         "tags": [
           "Books"
         ],
-        "summary": "Get book with given tag",
+        "summary": "Retorna livro pelo id",
         "responses": {
           "200": {
             "description": "Livro retornado pelo id",
@@ -209,7 +209,6 @@
           "401": {
             "description": "Unauthorized."
           }
-
         },
         "security": [
           {
@@ -292,170 +291,237 @@
           }
         ]
       }
+    },
+    "/files/books/{id}": {
+      "post": {
+        "tags": [
+          "Quotes"
+        ],
+        "summary": "Adiciona citações de arquivo .csv do kindle ",
+        "consumes": "multipart/form-data",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "Quotes",
+            "type": "file",
+            "description": "Upload de arquivo .csv do kindle",
+            "schema": {
+              "$ref": "#/definitions/BookCreateRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Book Uploaded"
+          },
+          "401": {
+            "description": "Token Invalid"
+          },
+          "400": {
+            "description": "Validation fails"
+          }
+        }
+      }
+    },
+    "books/{id}/quotes": {
+      "delete": {
+        "summary": "Deleta todas as citações de um livro",
+        "tags": [
+          "Quotes"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "Deleta citações de um determinado livro"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "quotes removed from database"
+          },
+          "401": {
+            "description": "Token Invalid."
+          },
+          "400": {
+            "description": "failed to remove quotes"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
     }
-  },
-  "securityDefinitions": {
-    "JWT": {
-      "type": "apiKey",
-      "name": "Authorization",
-      "in": "header"
-    }
-  },
-  "definitions": {
-    "UserRegisterRequest": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "email": {
-          "type": "string"
-        },
-        "password": {
-          "type": "string"
-        }
+
+    },
+    "securityDefinitions": {
+      "JWT": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
       }
     },
-    "UserRegisterResponse": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer"
-        },
-        "name": {
-          "type": "string"
-        },
-        "email": {
-          "type": "string"
+    "definitions": {
+      "UserRegisterRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
         }
-      }
-    },
-    "UserUpdateRequest": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "email": {
-          "type": "string"
-        },
-        "oldPassword": {
-          "type": "string"
-        },
-        "password": {
-          "type": "string"
-        },
-        "confirmPassword": {
-          "type": "string"
+      },
+      "UserRegisterResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
         }
-      }
-    },
-    "UserUpdateResponse": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer"
-        },
-        "name": {
-          "type": "string"
-        },
-        "email": {
-          "type": "string"
+      },
+      "UserUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "oldPassword": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "confirmPassword": {
+            "type": "string"
+          }
         }
-      }
-    },
-    "UserSessionRequest": {
-      "type": "object",
-      "properties": {
-        "email": {
-          "type": "string"
-        },
-        "password": {
-          "type": "string"
+      },
+      "UserUpdateResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
         }
-      }
-    },
-    "UserSessionResponse": {
-      "type": "object",
-      "properties": {
-        "_id": {
-          "type": "integer"
-        },
-        "name": {
-          "type": "string"
-        },
-        "email": {
-          "type": "string"
-        },
-        "token": {
-          "type": "string"
+      },
+      "UserSessionRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
         }
-      }
-    },
-    "BookCreateRequest": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "author": {
-          "type": "string"
-        },
-        "notes": {
-          "type": "string"
+      },
+      "UserSessionResponse": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          }
         }
-      }
-    },
-    "BookCreateResponse": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "author": {
-          "type": "string"
-        },
-        "notes": {
-          "type": "string"
-        },
-        "id": {
-          "type": "integer"
+      },
+      "BookCreateRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
         }
-      }
-    },
-    "BookGetResponse": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer"
-        },
-        "name": {
-          "type": "string"
-        },
-        "author": {
-          "type": "string"
-        },
-        "notes": {
-          "type": "string"
+      },
+      "BookCreateResponse": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          }
         }
-      }
-    },
-    "BookGetByTagRequest": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer"
-        },
-        "name": {
-          "type": "string"
-        },
-        "author": {
-          "type": "string"
-        },
-        "notes": {
-          "type": "string"
+      },
+      "BookGetResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      },
+      "BookGetByTagRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
         }
       }
     }
   }
-}
